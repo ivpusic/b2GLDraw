@@ -67,23 +67,6 @@ void drawBox(double x, double y, int w, int h) {
     dynamicBody->CreateFixture(&boxFixtureDef);
 }
 
-void drawRandom(double x, double y, int w, int h) {
-    b2BodyDef myBodyDef;
-    myBodyDef.type = b2_dynamicBody;
-    myBodyDef.position.Set(x, y);
-    myBodyDef.angle = 0;
-
-    b2Body* dynamicBody = world->CreateBody(&myBodyDef);
-
-    b2CircleShape boxShape;
-    boxShape.m_radius = 2;
-
-    b2FixtureDef boxFixtureDef;
-    boxFixtureDef.shape = &boxShape;
-    boxFixtureDef.density = 1;
-    dynamicBody->CreateFixture(&boxFixtureDef);
-}
-
 void drawGround() {
     b2Body *groundBody;
     b2Fixture *bottomFixture;
@@ -124,7 +107,6 @@ int main(int argc, char** argv) {
 
     // draw bodies
     drawBox(5, 50, 2, 1);
-    drawRandom(10, 50, 1, 1);
     drawGround();
 
     glutDisplayFunc(paint);
