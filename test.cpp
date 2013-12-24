@@ -2,7 +2,7 @@
 #include <math.h>
 #include <GL/glut.h>
 #include <Box2D/Box2D.h>
-#include "b2GLDraw.h"
+#include "src/b2GLDraw.h"
 
 double XMIN = 0;
 double XMAX = 100;
